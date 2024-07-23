@@ -1,4 +1,5 @@
 import "@/assets/styles/globals.css";
+import Navbar from "@/components/Navbar";
 import { title } from "process";
 
 interface MainLayoutProps {
@@ -15,6 +16,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body>
+        <Navbar></Navbar>
         <div>{children}</div>
         <div>TEST:THERE IS A CHILREN PROP DIV ABOVE</div>
       </body>
