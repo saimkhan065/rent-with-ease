@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { Collection, Schema, model, models } from "mongoose";
 
 const PropertySchema = new Schema(
   {
@@ -83,6 +83,7 @@ const PropertySchema = new Schema(
   },
   {
     timestamps: true,
+    //   collection: 'properties' CAN explicitly specify
   }
 );
 
