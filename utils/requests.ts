@@ -1,4 +1,4 @@
-const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
+const apiDomain = process.env.NEXT_PUBLIC_DOMAIN_API;
 
 // Fetch Basic - Test
 async function fetchAllBasic() {
@@ -17,15 +17,17 @@ async function fetchAllBasic() {
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
   try {
+    //console.log(apiDomain); //test
     // Handle the case where the domain is not available yet
     if (!apiDomain) {
       return [];
     }
 
-    const res = await fetch(
-      `${apiDomain}/properties${showFeatured ? "/featured" : ""}`,
-      { cache: "no-store" }
-    );
+    // const res = await fetch(
+    //   `${apiDomain}/properties${showFeatured ? "/featured" : ""}`,
+    //   { cache: "no-store" }
+    // );
+    const res = await fetch(`${apiDomain}/properties`, { cache: "no-store" });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -39,13 +41,13 @@ async function fetchProperties({ showFeatured = false } = {}) {
 }
 
 // Fetch single property
-async function fetchProperty(id: number) {
+async function fetchProperty(id: any) {
   try {
     // Handle the case where the domain is not available yet
     if (!apiDomain) {
       return null;
     }
-
+    // hit api to attempt CRUD with routes
     const res = await fetch(`${apiDomain}/properties/${id}`);
 
     if (!res.ok) {

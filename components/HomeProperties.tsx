@@ -1,12 +1,12 @@
 import Link from "next/link";
 import PropertyCard from "@/components/PropertyCard";
-import properties from "@/properties.json";
-// import { fetchProperties } from "@/utils/requests";
+//import properties from "@/properties.json";
+import { fetchProperties } from "@/utils/requests";
 
 const HomeProperties = async () => {
-  //   const data = await fetchProperties();
+  const data = await fetchProperties();
 
-  const recentProperties = properties //data.properties
+  const recentProperties = data.properties //data.properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
 
@@ -17,11 +17,11 @@ const HomeProperties = async () => {
           <h2 className="text-3xl font-bold text-blue-500 mb-6 text-center">
             Recent Properties
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
             {recentProperties.length === 0 ? (
               <p>No Properties Found</p>
             ) : (
-              recentProperties.map((property) => (
+              recentProperties.map((property: any) => (
                 <PropertyCard key={property._id} property={property} />
               ))
             )}
