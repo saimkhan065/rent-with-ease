@@ -1,5 +1,19 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 
+// Fetch Basic - Test
+async function fetchAllBasic() {
+  try {
+    const res = await fetch("http://localhost:3000/api/properties", {
+      cache: "no-store",
+    });
+    return res.json();
+    //can also await here
+    //must await to resolve before using in map
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
   try {
@@ -45,4 +59,4 @@ async function fetchProperty(id: number) {
   }
 }
 
-export { fetchProperties, fetchProperty };
+export { fetchProperties, fetchProperty, fetchAllBasic };

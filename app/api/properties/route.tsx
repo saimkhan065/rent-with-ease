@@ -9,6 +9,7 @@ interface Result {
   properties: (typeof Property)[];
 }
 // GET /api/properties
+// modified to not include total for test
 export const GET = async (request: NextRequest): Promise<NextResponse> => {
   try {
     await connectDB();
@@ -26,6 +27,7 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
       total,
       properties,
     };
+    //console.log(JSON.stringify(result));
 
     return new NextResponse(JSON.stringify(result), {
       status: 200,
