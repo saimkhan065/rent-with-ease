@@ -3,7 +3,6 @@ import Image from "next/image";
 const PropertyHeaderImage = ({ image }: any) => {
   return (
     <section>
-      <h2>Header Image</h2>
       <div className="container-xl m-auto">
         <div className="grid grid-cols-1">
           <Image
