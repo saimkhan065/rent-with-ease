@@ -4,6 +4,7 @@ import { title } from "process";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import InfoBox from "@/components/InfoBox";
+import AuthProvider from "@/components/AuthProvider";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -17,13 +18,15 @@ export const metadata = {
 };
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </AuthProvider>
   );
 };
 
