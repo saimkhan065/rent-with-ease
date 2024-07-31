@@ -1,3 +1,10 @@
+/*
+Note: I was getting an editor warning "Unkown Rule for @tailwind"
+Solution: It was a vscode specific error, 
+1. installed tailwindcss extension
+2. added file association *.css : tailwindcss
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
