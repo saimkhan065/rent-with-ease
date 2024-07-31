@@ -4,8 +4,8 @@ import PropertyCard from "@/components/PropertyCard";
 import { fetchAllBasic, fetchProperties } from "@/utils/requests";
 
 const HomeProperties = async () => {
-  const data = await fetchAllBasic();
-  console.log("data->", data);
+  const data = await fetchProperties();
+  //console.log("data->", data);
 
   const recentProperties = data.properties
     .sort(() => Math.random() - Math.random())
