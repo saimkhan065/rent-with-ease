@@ -1,3 +1,4 @@
+"use client";
 import connectDB from "@/config/database";
 import Property from "@/models/Property";
 import { NextResponse } from "next/server";
