@@ -10,8 +10,8 @@ const HomePage: React.FC = async () => {
     <>
       <Hero />
       <InfoBoxes />
-      <div>Properties Home</div>
-      <Link href="/properties">Show Properties</Link>
+      {/* <div>Properties Home</div>
+      <Link href="/properties">Show Properties</Link> */}
       <HomeProperties />
     </>
   );
