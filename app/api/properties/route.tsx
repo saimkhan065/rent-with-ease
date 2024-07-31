@@ -1,4 +1,3 @@
-"use client";
 import connectDB from "@/config/database";
 import Property from "@/models/Property";
 import { NextRequest, NextResponse } from "next/server";
@@ -28,7 +27,7 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
       total,
       properties,
     };
-    //console.log(JSON.stringify(result));
+    console.log("api return ->", JSON.stringify(result));
 
     return new NextResponse(JSON.stringify(result), {
       status: 200,

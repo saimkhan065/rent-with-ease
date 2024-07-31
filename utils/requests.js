@@ -17,7 +17,7 @@ async function fetchAllBasic() {
 // Fetch all properties
 async function fetchProperties({ showFeatured = false } = {}) {
   try {
-    //console.log(apiDomain); //test
+    console.log("apidomain->", apiDomain); //test
     // Handle the case where the domain is not available yet
     if (!apiDomain) {
       return [];
