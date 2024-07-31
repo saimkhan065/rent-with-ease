@@ -39,7 +39,7 @@ const PropertyPage = () => {
       console.log("trying to fetch because null"); //test
       fetchPropertyData();
     }
-  }, [id]);
+  }, [id, property]);
 
   if (!property && !loading) {
     return (
