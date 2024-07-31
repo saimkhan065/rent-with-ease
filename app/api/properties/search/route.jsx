@@ -1,5 +1,6 @@
 import connectDB from "@/config/database";
 import Property from "@/models/Property";
+import { NextResponse } from "next/server";
 
 // GET /api/properties/search
 export const GET = async (request) => {
@@ -37,6 +38,6 @@ export const GET = async (request) => {
     });
   } catch (error) {
     console.log(error);
-    return new Response("Something went wrong", { status: 500 });
+    return new NextResponse("Something went wrong", { status: 500 });
   }
 };
