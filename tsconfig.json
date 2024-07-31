@@ -26,7 +26,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/api/properties/search/route.jsx"
+    "app/api/properties/search/route.jsx",
+    "components/Navbar.jsx",
+    "app/properties/[id]/page.jsx",
+    "app/properties/search-results/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

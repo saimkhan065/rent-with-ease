@@ -27,7 +27,7 @@ async function fetchProperties({ showFeatured = false } = {}) {
     //   `${apiDomain}/properties${showFeatured ? "/featured" : ""}`,
     //   { cache: "no-store" }
     // );
-    const res = await fetch(`${apiDomain}/properties`, { cache: "no-store" });
+    const res = await fetch(`${apiDomain}/properties`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
